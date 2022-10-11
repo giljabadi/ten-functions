@@ -10,35 +10,31 @@
 */
 
 //1.
-const isTrue = (x) => x ? true : false
+const isTrue = (x) => x === true
 
 //2.
-const isFalse = (x) => x ? false : true
+const isFalse = (x) => x === false
 
 //3.
-const not = (x) => {
-    if (x === false || x === null ||  x=== undefined || x === "" || x === 0) {
-        return true
+const not = (x) => !x
 
-    } else if (isNaN(x)==true) {
+//4.
+const addOne = (x) => parseFloat(x)+1
+
+//5.
+const isEven = (x) => {
+    if (x % 2 == 0) {
         return true
-    }
-    else {
+    } else {
         return false
     }
 }
 
-//4.
-const addOne = (x) => parseInt(x)+1
-
-//5.
-const isEven = (x) => x%2==0 ? true : false
-
 //6.
-const isIdentical = (x, y) => x===y ? true : false
+const isIdentical = (x, y) => x === y
 
 //7.
-const isEqual = (x, y) => x==y ? true : false
+const isEqual = (x, y) => x == y
 
 //8.
 const or = (x, y) => x || y
@@ -47,4 +43,10 @@ const or = (x, y) => x || y
 const and = (x, y) => x && y
 
 //10.
-const concat = (x, y) => x + y
+const concat = (x, y) => {
+    if (typeof x == 'string' && typeof y == 'string') {
+        return x.concat(y)
+    } else {
+        return x.toString() + y.toString()
+    }
+}
